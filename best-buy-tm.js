@@ -688,6 +688,7 @@ function pleasewaitcompletedEventHandler(evt) {
          const OOSButton_L1 = "c-button c-button-disabled c-button-lg c-button-block add-to-cart-button c-button-secondary c-button-md"
          const OOSButton_L2 = "btn btn-disabled btn-lg btn-block add-to-cart-button"
          const OOSButton_L3 = "c-button c-button-secondary c-button-md c-button-block"
+         const OOSButton_L4 = "c-button c-button-disabled c-button-lg c-button-block add-to-cart-button" //Added 4th version of Sold Out button 
          console.log('BEGIN ')
          if (document.getElementsByClassName(OOSButton_L1).length == 1)
          {
@@ -698,8 +699,13 @@ function pleasewaitcompletedEventHandler(evt) {
          {
              OOSButton = document.getElementsByClassName(OOSButton_L2);
              console.log('OOS Button Class 2 : ' + OOSButton_L2)
-          }
-
+         }
+         else if (document.getElementsByClassName(OOSButton_L4).length == 1)
+         {
+             OOSButton = document.getElementsByClassName(OOSButton_L4);
+             console.log('OOS Button Class 4 : ' + OOSButton_L4)
+         }
+                   
          else {
 
           // When OOS is not found this will have 0 length. We need have value in OOSButton to move forward
