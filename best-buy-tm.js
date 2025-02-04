@@ -77,16 +77,21 @@
 
  //____ REQUIRED FLAGS ____________________________________________________
 
- const ITEM_KEYWORD= "PNY"; // NO SPACES IN KEYWORD - ONLY ONE WORD
- const CREDITCARD_CVV = "***"; // BOT will run without changing this value.
+ const ITEM_KEYWORD= "5090"; // NO SPACES IN KEYWORD - ONLY ONE WORD
+ const CREDITCARD_CVV = "***"; // BOT will run without changing this value. Can be more than 3 digits (e.g. for AMEX cards)
  const TESTMODE = "Yes"; // TESTMODE = "No" will buy the card
  const SMS_DIGITS = "****"; // Enter last 4 digits of phone # for SMS verification (required for verification)
 
  //____ PLEASE WAIT FLAGS : ADVANCED OPTIONS _____________________________
 
  //const QUEUE_TIME_CUTOFF = 0 // (in Minutes) Keep retrying until queue time is below.
- //onst NEW_QUEUE_TIME_DELAY = 5 // (in Seconds) Ask new queue time set seconds
- const OOS_REFRESH = 10 // (in Seconds) Refresh rate on OOS item.
+ //const NEW_QUEUE_TIME_DELAY = 5 // (in Seconds) Ask new queue time set seconds
+
+ //Change MIN_REFRESH and MAX_REFRESH below to customize how long (in seconds) between page refreshes. Bestbuy may throttle or start blocking/"shadowblocking" your if you go much below 10 seconds.
+ const MIN_REFRESH = 10; //Minimum time (in seconds) for page refreshes
+ const MAX_REFRESH = 30; //Maximum time (in seconds) for page refresh
+ //Chooses random amount of seconds between MIN_REFRESH and MAX_REFRESH to refresh to page. This is to stop the script from being an obvious bot.
+ const OOS_REFRESH = Math.floor(Math.random() * (MAX_REFRESH - MIN_REFRESH + 1)) + MIN_REFRESH; //To disable randomized refresh times, change it to a number (e.g. const OOS_REFRESH = 10)
 
  //____ LAZY FLAGS : WILL NOT AFFECT BOT PERFORMACE _____________________
 
